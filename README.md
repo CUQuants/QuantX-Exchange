@@ -1,4 +1,4 @@
-# QuantX Exchange
+![QuantX Exchange Logo](/docs/quantx.png)
 
 QuantX Exchange is a full-featured, simulated trading platform developed for financial engineering and market microstructure experimentation. It provides a robust backend, a complete API for trading and data access, and a convenient Python client library for interaction.
 
