@@ -8,14 +8,14 @@ from datetime import datetime
 from typing import List, Optional
 import uvicorn
 
-from models.database import init_db, get_db
-from models.models import User, Order, Trade, Position, MarketData
-from api.auth import router as auth_router
-from api.market_data import router as market_data_router
-from api.account import router as account_router
-from api.trading import router as trading_router, MatchingEngineSingleton, engine_singleton as trading_engine_singleton
-from matching_engine.engine import MatchingEngine
-from websocket_manager import ConnectionManager
+from backend.models.database import init_db, get_db
+from backend.models.models import User, Order, Trade, Position, MarketData
+from backend.api.auth import router as auth_router
+from backend.api.market_data import router as market_data_router
+from backend.api.account import router as account_router
+from backend.api.trading import router as trading_router, MatchingEngineSingleton, engine_singleton as trading_engine_singleton
+from backend.matching_engine.engine import MatchingEngine
+from backend.websocket_manager import ConnectionManager
 
 # Global instances
 connection_manager = ConnectionManager()
@@ -61,11 +61,6 @@ app.add_middleware(
 
 # Security
 security = HTTPBearer()
-
-# Initialize API routers
-auth_api = AuthAPI()
-trading_api = TradingAPI(matching_engine_instance)
-market_data_api = MarketDataAPI()
 
 # Include API routes
 app.include_router(auth_router, prefix="/api")

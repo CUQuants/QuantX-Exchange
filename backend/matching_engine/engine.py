@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from datetime import datetime
 import json
 
-from models.models import Order, Trade, Position, User, MarketData, OrderSide, OrderType, OrderStatus
+from backend.models.models import Order, Trade, Position, User, MarketData, OrderSide, OrderType, OrderStatus
 
 class MatchingEngine:
     def __init__(self):

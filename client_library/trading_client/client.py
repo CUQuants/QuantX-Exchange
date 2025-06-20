@@ -16,6 +16,21 @@ class TradingClient:
         """Set the authentication token for the session."""
         self.session.headers.update({"Authorization": f"Bearer {token}"})
 
+    def login(self, username: str, password: str) -> bool:
+        """Logs in to the exchange and stores the token."""
+        try:
+            response = self.session.post(
+                f"{self.base_url}/api/auth/token",
+                data={"username": username, "password": password}
+            )
+            response.raise_for_status()
+            token_data = response.json()
+            self.set_token(token_data["access_token"])
+            return True
+        except requests.exceptions.RequestException as e:
+            print(f"Login failed: {e}")
+            return False
+
     def _request(self, method: str, endpoint: str, params: Optional[Dict] = None, data: Optional[Dict] = None) -> Dict:
         """Helper method to make requests to the API."""
         url = f"{self.base_url}{endpoint}"

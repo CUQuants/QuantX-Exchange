@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, ForeignKey, Enum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from models.database import Base
+from backend.models.database import Base
 import enum
 
 class OrderSide(enum.Enum):
@@ -26,9 +26,11 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     password_hash = Column(String, nullable=False)
     api_key = Column(String, unique=True, index=True)
+    api_secret_hash = Column(String, unique=True)
     balance = Column(Float, default=1000.0)  # Starting balance
     is_admin = Column(Boolean, default=False)
     created_at = Column(DateTime, server_default=func.now())
+    last_login_at = Column(DateTime, nullable=True)
     
     # Relationships
     orders = relationship("Order", back_populates="user")

@@ -7,14 +7,15 @@ import secrets
 from datetime import datetime, timedelta
 import jwt
 
-from models.database import get_db
-from models.models import User
+from backend.models.database import get_db
+from backend.models.models import User
 
 # Pydantic models for request/response
 class UserCreate(BaseModel):
     username: str
     email: str
     password: str
+    api_key: str
 
 class UserLogin(BaseModel):
     username: str
@@ -168,3 +169,8 @@ class AuthAPI:
         db.commit()
         
         return {"api_key": new_api_key, "message": "API key refreshed successfully"}
+
+# Instantiate the AuthAPI and expose its router
+auth_api = AuthAPI()
+router = auth_api.router
+get_current_user = auth_api.get_current_user

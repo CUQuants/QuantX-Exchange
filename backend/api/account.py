@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from models.database import get_db
-from models.models import User, Position, Trade, Order, OrderStatus
-from api.auth import get_current_user
+from backend.models.database import get_db
+from backend.models.models import User, Position, Trade, Order, OrderStatus
+from backend.api.auth import get_current_user
 from pydantic import BaseModel
 
 # Pydantic Models for API Responses

@@ -20,7 +20,7 @@ Base = declarative_base()
 
 def init_db():
     """Initialize database tables"""
-    from models.models import User, Order, Trade, Position, MarketData, AttendanceRecord
+    from backend.models.models import User, Order, Trade, Position, MarketData, AttendanceRecord
     Base.metadata.create_all(bind=engine)
     
     # Create default admin user and initial market data

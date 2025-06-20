@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from typing import Optional
 
-from models.database import get_db
-from models.models import User, Order, OrderSide, OrderType, OrderStatus
-from api.auth import get_current_user
-from matching_engine.engine import MatchingEngine
+from backend.models.database import get_db
+from backend.models.models import User, Order, OrderSide, OrderType, OrderStatus
+from backend.api.auth import get_current_user
+from backend.matching_engine.engine import MatchingEngine
 
 # Pydantic Models
 class CreateOrderRequest(BaseModel):

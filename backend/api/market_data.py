@@ -6,9 +6,8 @@ from typing import List, Optional, Dict
 from datetime import datetime, timedelta
 from sqlalchemy.sql import func
 
-from models.database import get_db
-from models.models import MarketData, Order, Trade, AttendanceRecord, OrderSide, OrderStatus
-from api.auth import AuthAPI
+from backend.models.database import get_db
+from backend.models.models import MarketData, Order, Trade, AttendanceRecord, OrderSide, OrderStatus
 
 # Pydantic models
 class MarketDataResponse(BaseModel):

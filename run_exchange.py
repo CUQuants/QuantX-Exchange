@@ -9,7 +9,7 @@ import sys
 import os
 
 def main():
-    print("🚀 Starting CU Quants Exchange...")
+    print("Starting The QuantX Exchange...")
     print("📊 Symbol: CQAF (CU Quants Attendance Futures)")
     print("🌐 Web Interface: http://localhost:8000")
     print("📡 WebSocket: ws://localhost:8000/ws")
@@ -18,10 +18,11 @@ def main():
     
     try:
         uvicorn.run(
-            "app:app",
+            "backend.app:app",
             host="0.0.0.0",
             port=8000,
             reload=True,
+            reload_dirs=["backend"],
             log_level="info",
             access_log=True
         )
