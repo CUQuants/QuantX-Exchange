@@ -95,7 +95,7 @@ python scripts/manage_users.py <your_username> <your_email>
 ```
 The script will prompt you to enter and confirm a password. It will then output your **API Key** and **API Secret**.
 
-**⚠️ Important**: The API Secret is only shown once. Make sure to save it in a secure location.
+**Important**: The API Secret is only shown once. Make sure to save it in a secure location.
 
 ### 3. Use the Python Client
 
