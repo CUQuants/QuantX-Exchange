@@ -1,4 +1,4 @@
-# QuantX Exchange
+<img src="docs/quantx.png" alt="QuantX Exchange Logo" width="400"/>
 
 QuantX Exchange is a full-featured, simulated trading platform developed for financial engineering and market microstructure experimentation. It provides a robust backend, a complete API for trading and data access, and a convenient Python client library for interaction.
 
@@ -8,9 +8,9 @@ QuantX Exchange is a full-featured, simulated trading platform developed for fin
 - **Matching Engine**: A functional limit order book with a FIFO matching algorithm for processing market and limit orders.
 - **Real-time Updates**: WebSocket support for broadcasting live trade data to connected clients.
 - **User & Account Management**: Includes endpoints for checking balances, positions, and trade history.
-- **Secure Authentication**: User authentication is handled via JWT, with API keys for programmatic access.
-- **Python Client Library**: A pip-installable client library (`quantx_exchange_client`) to easily connect to and interact with the exchange.
-- **CLI User Management**: A command-line script for easily creating and managing user accounts.
+- **Secure Authentication**: User authentication is handled via JWT, with API keys for programmatic access. 
+- **Python Client Library**: A pip-installable client library (`quantx_exchange_client`) to easily connect to and interact with the exchange. (Not Fully Developed)
+- **CLI User Management**: A command-line script for easily creating and managing user accounts. (Not Fully Developed)
 
 ## Technology Stack
 
